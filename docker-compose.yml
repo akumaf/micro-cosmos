@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+
+  # Database Instance
+  database:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: micro-cosmos
+
+  # Small Webserver to route static pages in development
+  nginx-server:
+    build: website/server
+    ports:
+      - "80:80"
+    volumes:
+      - "./website/dist:/app"
+
+volumes:
+  db_data: {}
