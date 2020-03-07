@@ -4,7 +4,7 @@ This project is a very simple skeleton to get started to build micro services.
 Comes out of the box with:
 - A micronaut application skeleton
 - A VueJs Frontend and build scripts
-- A ngingx engine serving static files
+- A nginx engine serving static files
 - A Mysql database to store some data
 
 ## Backend
